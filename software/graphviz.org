@@ -1,0 +1,8 @@
+#+TITLE: Graphviz
+#+OPTIONS: ^:nil
+#+OPTIONS: \n:t
+
+* References
+
+- https://renenyffenegger.ch/notes/tools/Graphviz/elems/node/main-types/record-based
+- https://hbfs.wordpress.com/2014/09/30/a-quick-primer-on-graphviz/
