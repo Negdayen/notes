@@ -1,0 +1,9 @@
+#+TITLE: xxd
+#+OPTIONS: ^:nil
+#+OPTIONS: \n:t
+
+* Convert unformatted plain text hexadecimal to binary
+
+#+BEGIN_SRC sh
+xxd -r -p "${input_file}" "${output_file}"
+#+END_SRC
