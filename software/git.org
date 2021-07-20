@@ -1,0 +1,69 @@
+#+TITLE: Git
+#+OPTIONS: ^:nil
+#+OPTIONS: \n:t
+
+* Common tasks
+
+** Configure name and email to use in local repository
+
+#+BEGIN_SRC sh
+(
+    git config user.name 'Jacob Horrocks'
+    git config user.email 'jacob.horrocks@gmail.com'
+)
+#+END_SRC
+
+** Reapply a series of commits onto another base commit
+
+#+BEGIN_SRC sh
+git rebase --onto ${base_commit} ${exclusive_start_commit} ${inclusive_end_commit}
+#+END_SRC
+
+* Branches
+
+** Create new branches
+
+#+CAPTION: Create and checkout a new branch tracking another branch
+#+BEGIN_SRC sh
+git checkout -b upstream --track remotes/origin/upstream
+#+END_SRC
+
+** Force and change branch to point to a specific commit
+
+#+BEGIN_SRC sh
+git branch -f ${branch_name} ${commit}
+#+END_SRC
+
+** List branches
+
+#+CAPTION: List all branches
+#+BEGIN_SRC sh
+git branch --all
+#+END_SRC
+
+#+CAPTION: List local branches and the branches they are tracking (if any)
+#+BEGIN_SRC sh
+git branch -vvv
+#+END_SRC
+
+* Repositories
+
+** Normal Repository <-> Bare Repository
+
+#+CAPTION: Convert normal to bare:
+#+BEGIN_SRC sh
+git config --local --bool core.bare true
+#+END_SRC
+
+#+CAPTION: Convert bare to normal:
+#+BEGIN_SRC sh
+git config --local --bool core.bare false
+# Will want to set the following if bringing a Linux .git to Windows
+git config --local core.filemode false
+#+END_SRC
+
+*** References
+
+- https://stackoverflow.com/questions/2199897/how-to-convert-a-normal-git-repository-to-a-bare-one
+- https://stackoverflow.com/questions/10637378/how-do-i-convert-a-bare-git-repository-into-a-normal-one-in-place
+
