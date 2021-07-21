@@ -1,0 +1,28 @@
+#+TITLE: The Domain Name System (DNS)
+#+OPTIONS: ^:nil
+#+OPTIONS: \n:t
+
+* Resource Records (RR)
+
+- are the content of DNS responses
+
+* Tools
+
+** dig (Domain Information Groper)
+
+- defaults to querying for DNS results according to your computer's network settings
+- capable of querying specific name servers and even of tracing through the resolution of a particular query
+- recommended over other local tools
+
+** nslookup
+
+- ancient
+- not recommended
+- does not use local resolver; uses its own
+
+** host
+
+- simple
+- not much functionality
+
+* References
