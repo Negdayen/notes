@@ -4,12 +4,36 @@
 
 * Common tasks
 
-** Configure name and email to use in local repository
+** Initial synchronized shared configuration
+
+#+CAPTION: .gitattributes
+#+BEGIN_QUOTE
+# Disable line break normalization for all files by default
+* -text
+#+END_QUOTE
+
+** Initial personal global configuration
+
+*** All
 
 #+BEGIN_SRC sh
 (
-    git config user.name 'Jacob Horrocks'
-    git config user.email 'jacob.horrocks@gmail.com'
+    # Disable automatic newline conversions
+    git config --global core.autocrlf false
+    # Line feed signifies a newline
+    git config --global core.eol lf
+    # Github/Gitea use your email address to tie commits to your user profile
+    git config --global user.email 'jacob.horrocks@gmail.com'
+    git config --global user.name 'Jacob Horrocks'
+)
+#+END_SRC
+
+*** Windows-specific
+
+#+BEGIN_SRC sh
+(
+    # Use Windows's certificate store for TLS (default uses OpenSSL's certificate store)
+    git config --global http.sslBackend schannel
 )
 #+END_SRC
 
@@ -66,4 +90,3 @@ git config --local core.filemode false
 
 - https://stackoverflow.com/questions/2199897/how-to-convert-a-normal-git-repository-to-a-bare-one
 - https://stackoverflow.com/questions/10637378/how-do-i-convert-a-bare-git-repository-into-a-normal-one-in-place
-
