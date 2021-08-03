@@ -32,6 +32,8 @@
 
 #+BEGIN_SRC sh
 (
+    # Ignore executable bits on Windows
+    git config --global core.filemode false
     # Use Windows's certificate store for TLS (default uses OpenSSL's certificate store)
     git config --global http.sslBackend schannel
 )
