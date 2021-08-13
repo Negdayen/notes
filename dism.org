@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       d59f3d5c-22b3-4fc5-8fc7-ed65e9827ecb
+:END:
+#+title: Deployment Image Servicing and Management (DISM)
+
+* How-to
+
+** Disable/Enable/List [[id:05e987cb-83bc-4177-b2dc-22d15e89ed84][Microsoft Windows]] Features from the command-line.
+
+#+CAPTION: Enabling .NET Framework 4.0 using DISM
+#+BEGIN_SRC bat
+DISM.exe /online /Enable-Feature /FeatureName:NetFx4 /All
+#+END_SRC
+
+#+CAPTION: Listing Windows Features using DISM
+#+BEGIN_SRC bat
+DISM.exe /online /Get-Features /Format:Table
+#+END_SRC
