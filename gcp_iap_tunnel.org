@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       433ca53d-2bc5-4193-81f6-c1eeb1238c04
+:ROAM_REFS: https://cloud.google.com/iap/docs/using-tcp-forwarding
+:END:
+#+title: Creating tunnels to private virtual machines on Google Cloud.
+
+[[id:6ed944ee-5232-4efd-8259-8ab437699846][Google Cloud Platform (GCP)]] 
+
+- Incoming IP addresses will appear on the 35.235.240.0/20 subnet.
+- Firewall rules still apply
+
+* Template
+
+#+BEGIN_SRC sh
+gcloud compute start-iap-tunnel "${gcp_instance_name}" "${remote_port}" \
+    --local-host-port="localhost:${local_port}" \
+    --zone="${gcp_zone}"
+#+END_SRC

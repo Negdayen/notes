@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       6ed944ee-5232-4efd-8259-8ab437699846
+:END:
+#+title: Google Cloud Platform (GCP)
