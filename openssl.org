@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8e131ab4-37e4-411c-af00-2c64d00e4db1
+:ROAM_REFS: man:openssl man:openssl-x509 man:openssl-s_client
+:END:
+#+title: OpenSSL
+
+#+caption: View a server's certificate chain
+#+begin_src sh
+openssl s_client -showcerts -connect "${ip_address_and_port}"  | less
+#+end_src
