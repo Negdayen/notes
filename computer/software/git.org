@@ -1,94 +1,100 @@
-#+TITLE: git
-#+OPTIONS: ^:nil
-#+OPTIONS: \n:t
+:PROPERTIES:
+:ID:       be67e828-8410-4492-b817-17a723a7db47
+:END:
+#+title: Git
+#+options: ^:nil
+#+options: \n:t
 
 * Common tasks
 
 ** Initial synchronized shared configuration
 
-#+CAPTION: .gitattributes
-#+BEGIN_QUOTE
-# Disable line break normalization for all files by default
-* -text
-#+END_QUOTE
+ #+caption: .gitattributes
+ #+begin_quote
+ # Disable line break normalization for all files by default
+ * -text
+ #+end_quote
 
 ** Initial personal global configuration
 
-*** All
+*** On all platforms
 
-#+BEGIN_SRC sh
-(
-    # Disable automatic newline conversions
-    git config --global core.autocrlf false
-    # Line feed signifies a newline
-    git config --global core.eol lf
-    # Github/Gitea use your email address to tie commits to your user profile
-    git config --global user.email 'jacob.horrocks@gmail.com'
-    git config --global user.name 'Jacob Horrocks'
-)
+#+begin_src sh
+# Disable automatic newline conversions
+git config --global core.autocrlf false
+# Line feed signifies a newline
+git config --global core.eol lf
+# Github/Gitea use your email address to tie commits to your user profile
+git config --global user.email 'jacob.horrocks@gmail.com'
+git config --global user.name 'Jacob Horrocks'
 #+END_SRC
 
-*** Windows-specific
+*** On Windows only
 
-#+BEGIN_SRC sh
-(
-    # Ignore executable bits on Windows
-    git config --global core.filemode false
-    # Use Windows's certificate store for TLS (default uses OpenSSL's certificate store)
-    git config --global http.sslBackend schannel
-)
-#+END_SRC
+#+begin_src sh
+# Ignore executable bits on Windows
+git config --global core.filemode false
+# Use Windows's certificate store for TLS (default uses OpenSSL's certificate store)
+git config --global http.sslBackend schannel
+#+end_src
 
 ** Reapply a series of commits onto another base commit
 
-#+BEGIN_SRC sh
+#+begin_src sh
 git rebase --onto ${base_commit} ${exclusive_start_commit} ${inclusive_end_commit}
-#+END_SRC
+#+end_src
 
 * Branches
 
 ** Create new branches
 
-#+CAPTION: Create and checkout a new branch tracking another branch
-#+BEGIN_SRC sh
+#+caption: Create and checkout a new branch tracking another branch.
+#+begin_src sh
 git checkout -b upstream --track remotes/origin/upstream
-#+END_SRC
+#+end_src
 
 ** Force and change branch to point to a specific commit
 
-#+BEGIN_SRC sh
+#+begin_src sh
 git branch -f ${branch_name} ${commit}
-#+END_SRC
+#+end_src
 
 ** List branches
 
-#+CAPTION: List all branches
-#+BEGIN_SRC sh
+#+caption: List all branches.
+#+begin_src sh
 git branch --all
-#+END_SRC
+#+end_src
 
-#+CAPTION: List local branches and the branches they are tracking (if any)
-#+BEGIN_SRC sh
+#+caption: List local branches and the branches they are tracking (if any).
+#+begin_src sh
 git branch -vvv
-#+END_SRC
+#+end_src
 
 * Repositories
 
 ** Normal Repository <-> Bare Repository
+:PROPERTIES:
+:ID:       395a8e6b-7658-4388-bc21-24cb258477ed
+:ROAM_EXCLUDE: t
+:ROAM_REFS: https://stackoverflow.com/questions/2199897/how-to-convert-a-normal-git-repository-to-a-bare-one https://stackoverflow.com/questions/10637378/how-do-i-convert-a-bare-git-repository-into-a-normal-one-in-place
+:END:
 
-#+CAPTION: Convert normal to bare:
-#+BEGIN_SRC sh
+#+caption: Convert normal repository to bare repository.
+#+begin_src sh
 git config --local --bool core.bare true
-#+END_SRC
+#+end_src
 
-#+CAPTION: Convert bare to normal:
-#+BEGIN_SRC sh
+#+caption: Convert bare repository to normal repository.
+#+begin_src sh
 git config --local --bool core.bare false
 # Will want to set the following if bringing a Linux .git to Windows
 git config --local core.filemode false
-#+END_SRC
+#+end_src
 
-*** References
+* Submodules
 
-- https://stackoverflow.com/questions/2199897/how-to-convert-a-normal-git-repository-to-a-bare-one
-- https://stackoverflow.com/questions/10637378/how-do-i-convert-a-bare-git-repository-into-a-normal-one-in-place
+#+caption: Add a new submodule to a repository.
+#+begin_src sh
+git submodule add --name "${name}" -- "${repository}" "submodule/${name}"
+#+end_src
