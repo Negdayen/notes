@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       585f1446-2533-4821-8a74-5883c3f597d1
+:END:
+#+title: Git Submodules
+
+* How to add a new submodule to a repository
+
+#+begin_src sh
+git submodule add --name "${name}" -- "${repository}" "extern/${name}"
+#+end_src

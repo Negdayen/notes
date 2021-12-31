@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       5d048d37-5d85-4542-bb8b-538586e46b2a
+:ROAM_REFS: https://www.arin.net/resources/registry/whois/rws/cli/
+:END:
+#+title: whois
+
+* Retrieve information about an IP address
+
+Information may include known registered host names in [[id:4b0100a2-7fc2-46c0-84ed-9ca6338ac640][The Domain Name System (DNS)]].
+
+#+BEGIN_SRC sh
+whois -h whois.arin.net n "${ip_address}"
+#+END_SRC

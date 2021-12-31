@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       5879f017-9063-4097-9329-df0a70e542e8
+:END:
+#+title: Podman -- a Daemonless Alternative to the Docker Container Engine
+
+* Inspect a container by using an alternative entrypoint
+
+#+begin_src sh
+podman run --entrypoint='/bin/sh' "${image}" -c 'cat some/file'
+#+end_src
+
+* Inspect a container by spawning an interactive shell
+
+#+begin_src sh
+podman run -it --entrypoint=/bin/bash "${image}"
+#+end_src
+
+* Inspect information about a container image's Dockerfile
+
+#+begin_src sh
+podman inspect "${image}"
+#+end_src
+
+* Remove unused container runtime resources
+
+Adding the =--all= option will prune any images not actively used by a container.
+
+#+begin_src sh
+podman system prune
+#+end_src

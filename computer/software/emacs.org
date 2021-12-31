@@ -1,8 +1,0 @@
-#+TITLE: emacs
-#+OPTIONS: ^:nil
-#+OPTIONS: \n:t
-
-#+CAPTION: Useful Functions
-| id              | description                 |
-|-----------------+-----------------------------|
-| executable-find | emacs equivalent of `which` |

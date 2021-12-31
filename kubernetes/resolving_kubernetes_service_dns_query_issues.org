@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       792157c3-ffc2-44e5-a0b4-0da0f3028c72
+:ROAM_REFS: https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/
+:END:
+#+title: Resolving Kubernetes Service DNS Query Issues
+
+* kube-proxy not running on node caused issues with Kubernetes Service DNS query resolution
+
+A specific worker node within a Kubernetes cluster was not able to resolve cluster-level
+[[id:4b0100a2-7fc2-46c0-84ed-9ca6338ac640][DNS]] queries.  Any time a container running running on this node tried to connect to
+another [[id:b8be55e6-9cc6-48da-8bce-772503f1d21d][Kubernetes Service]], it would fail.  Containers running on this node would try to
+communicate with the =kube-dns= service using its service IP address but would fail.
+
+On further inspection, this node's =kube-proxy= was not running.  Starting =kube-proxy=
+resolved issues in establishing a connection to =kube-dns=, which in turn resolved errors
+with containers on this node resolving hostnames.

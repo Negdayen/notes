@@ -1,6 +1,7 @@
-#+TITLE: The Domain Name System (DNS)
-#+OPTIONS: ^:nil
-#+OPTIONS: \n:t
+:PROPERTIES:
+:ID:       4b0100a2-7fc2-46c0-84ed-9ca6338ac640
+:END:
+#+title: The Domain Name System (DNS)
 
 * Resource Records (RR)
 
@@ -24,5 +25,3 @@
 
 - simple
 - not much functionality
-
-* References

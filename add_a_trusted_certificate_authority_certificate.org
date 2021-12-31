@@ -1,0 +1,36 @@
+:PROPERTIES:
+:ID:        9a9a7361-c288-43e2-88f9-868a9fa6b85d
+:ROAM_REFS: http://www.gagravarr.org/writing/openssl-certs/index.shtml
+:END:
+#+title: Add a Trusted Certificate Authority Certificate
+
+* Add a Trusted Certificate Authority Certificate to Void Linux
+:PROPERTIES:
+:ROAM_REFS: man:update-ca-certificates
+:END:
+
+The XBPS package =ca-certificates= provides common certificate authority certificates to
+the system.
+
+Copy the certificate file to =/usr/local/share/ca-certificates=, making sure its file
+extension is =.crt=.
+
+#+begin_src sh
+sudo mkdir -p /usr/local/share/ca-certificates/
+sudo mv "${name}.crt" /usr/local/share/ca-certificates/
+sudo update-ca-certificates
+#+end_src
+
+* Add a Trusted Certificate Authority Certificate to MSYS2
+:PROPERTIES:
+:ROAM_REFS:  man:update-ca-trust
+:ROAM_REFS+: https://github.com/msys2/MSYS2-packages/issues/1781
+:END:
+
+#+begin_src sh
+mv "${ca_certificate}" /etc/pki/ca-trust/source/anchors/
+update-ca-trust extract
+# Despite intructions otherwise, the above was not sufficient, I was getting getting local
+# issuer errors via curl and pacman.  The below command resolved the issue.
+cp -a /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem /usr/ssl/certs/ca-bundle.crt
+#+end_src

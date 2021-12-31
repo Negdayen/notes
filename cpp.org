@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       bd17fd7d-7abb-4db5-ad28-abdb26592e7a
+:END:
+#+title: C++
+
+* Reading C/C++ type declarations
+:PROPERTIES:
+:ROAM_REFS: https://www.codeproject.com/articles/7042/how-to-interpret-complex-c-c-declarations
+:END:

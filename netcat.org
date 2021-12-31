@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       67ccf9dd-c893-435b-abf1-ae38f6120a0b
+:END:
+#+title: Netcat (ncat, nc)
+
+* Test network connectivity to TCP port
+
+** openbsd-ncat
+
+#+begin_src sh
+nc -vzw 1 "${address}" "${port}"
+#+end_src

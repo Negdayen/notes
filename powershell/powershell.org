@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       96a3594c-4691-4063-949d-e6152fd62fea
+:ROAM_REFS: https://docs.microsoft.com/en-us/powershell/
+:END:
+#+title: PowerShell

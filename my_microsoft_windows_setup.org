@@ -1,0 +1,88 @@
+:PROPERTIES:
+:ID:       7461a7be-ac20-49a4-b89e-1973bff20dd6
+:END:
+#+title: My Microsoft Windows Setup
+#+startup: num
+
+* GUI setup steps
+
+** Install Docker Desktop
+
+** Install an X11 Server
+
+- Download https://sourceforge.net/projects/vcxsrv
+
+* Command-line setup steps
+
+** Install scoop package manager
+
+#+begin_src powershell
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+
+# Enable scoop buckets
+scoop bucket add extras
+
+# Install scoop packages
+scoop install git # Required for scoop buckets
+scoop install windows-terminal
+#+end_src
+
+** Install MSYS2
+
+#+begin_src powershell
+scoop install msys2
+msys2 # Need to run msys2 after initial install
+#+end_src
+
+** Install MSYS2 packages
+
+#+begin_src sh
+pacman -S \
+       base-devel \
+       git \
+       mingw-w64-clang-x86_64-toolchain \
+       mingw-w64-ucrt-x86_64-toolchain \
+       mingw-w64-x86_64-toolchain
+#+end_src
+
+** Enable WSL2
+:PROPERTIES:
+:ROAM_REFS: https://docs.microsoft.com/en-us/windows/wsl/install-manual
+:END:
+
+#+begin_src powershell
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+# Manually download and install the latest Linux Kernel update package from
+# https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+wsl --set-default-version 2
+#+end_src
+
+** Install Void Linux on WSL2
+
+#+begin_src powershell
+mkdir C:\WSL
+mkdir C:\WSL\void
+docker run --name void-container voidlinux/voidlinux
+docker export void-container -o void.tar
+$image_id = (docker inspect --format="{{.Id}}" void-container)
+docker rm void-container
+docker rmi "${image_id}"
+wsl --import void C:\WSL\void .\void.tar
+wsl -l -v
+#+end_src
+
+** Setup Void Linux on WSL2
+
+#+begin_src sh
+/etc/runit/1
+/etc/runit/2 &
+cat > /etc/xbps.d/00-repository-main.conf <<EOF
+repository=https://mirrors.servercentral.com/voidlinux/current
+EOF
+xbps-install -S
+xbps-install git
+git clone https://github.com/Negdayen/system.git
+# Follow system.git README instructions
+#+end_src

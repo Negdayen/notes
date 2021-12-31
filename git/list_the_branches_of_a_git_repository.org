@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       b346ef9a-f001-455a-ba30-bbfaf4de7f6b
+:ROAM_REFS: man:git-branch
+:END:
+#+title: List the Branches of a Git Repository
+
+* List the branches of a git repository
+
+#+caption: List all branches.
+#+begin_src sh
+git branch --all
+#+end_src
+
+#+caption: List local branches and the branches they are tracking (if any).
+#+begin_src sh
+git branch -vvv
+#+end_src

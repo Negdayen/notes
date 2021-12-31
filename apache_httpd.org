@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       36c27ac9-db90-4a4f-b323-2f16a5eb2942
+:ROAM_REFS: https://httpd.apache.org/docs/current/
+:END:
+#+title: Apache HTTPD
+
+* Apache HTTPD Virtual Hosts
+:PROPERTIES:
+:ROAM_REFS: http://httpd.apache.org/docs/current/vhosts/
+:END:

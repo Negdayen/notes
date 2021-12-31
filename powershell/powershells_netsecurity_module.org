@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       6fa0eb19-bf06-4396-87de-eabc9e5b7448
+:ROAM_REFS: https://docs.microsoft.com/en-us/powershell/module/netsecurity/
+:END:
+#+title: PowerShell's NetSecurity Module
+
+* Open a specific port to incoming traffic from any source
+  :PROPERTIES:
+  :ROAM_REFS: https://docs.microsoft.com/en-us/powershell/module/netsecurity/new-netfirewallrule
+  :END:
+
+  #+begin_src powershell
+  New-NetFirewallRule -DisplayName “Allow Inbound HTTP” -Enabled True -Direction Inbound -Action Allow -Protocol TCP -LocalPort 80
+  #+end_src
+
+* Delete firewall rules with a specific display name
+  :PROPERTIES:
+  :ROAM_REFS: https://docs.microsoft.com/en-us/powershell/module/netsecurity/remove-netfirewallrule
+  :END:
+
+  #+begin_src powershell
+  Remove-NetFirewallRule -DisplayName “Allow Inbound HTTP”
+  #+end_src

@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       4fef91a1-ad2a-41be-bba3-0fe936cc2d85
+:ROAM_REFS: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/
+:END:
+#+title: PowerShell's Microsoft.Powershell.Core Module
+
+* Find all commands containing a specific string
+:PROPERTIES:
+:ROAM_REFS: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-command
+:END:
+
+#+begin_src powershell
+Get-Command '*Some-String*'
+#+end_src
+
+* Display information about a command or concept
+:PROPERTIES:
+:ROAM_REFS: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-help
+:END:
+
+#+caption: Example of getting help for the 'Get-Help' command
+#+begin_src powershell
+Get-Help Get-Help
+#+end_src

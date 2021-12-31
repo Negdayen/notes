@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a6034e9b-afa0-4485-8049-8b4c32ddb184
+:END:
+#+title: Windows Subsystem for Linux (WSL) Integration and Interaction with Microsoft Windows
+
+[[id:312c0474-6dcb-4045-8cb3-7b1e104b1b94][Windows Subsystem for Linux (WSL)]].
+
+* Access Windows Subsystem for Linux (WSL) files from Windows
+
+\\wsl$ is the root filepath for accessing WSL files.

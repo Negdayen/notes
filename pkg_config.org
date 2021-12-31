@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       026961b8-8234-46ea-b6bf-b448415b2519
+:END:
+#+title: pkg-config
+
+| Environment Variable | Description                                                       |
+|----------------------+-------------------------------------------------------------------|
+| PKG_CONFIG_PATH      | colon-separated list of additional paths to search for *.pc files |

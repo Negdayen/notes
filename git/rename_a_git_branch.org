@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       115b9a23-a846-42bb-a03e-2326f10c7200
+:END:
+#+title: Rename a Git Branch
+
+* Rename a Git branch using the command-line.
+
+#+begin_src sh
+git branch --move "${existing_branch_name}" "${new_branch_name}"
+#+end_src
+
+[[man:git-branch::renamed]]

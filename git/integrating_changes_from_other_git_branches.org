@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       2d84d211-7fd8-4334-9fab-45d1e89acaef
+:END:
+#+title: Integrating Changes from Other Git Branches
+
+* Merge differences from another branch into your current branch
+
+#+begin_src sh
+git checkout "${current_branch}"
+git merge "${other_branch}"
+#+end_src
+
+man:git-merge
+
+* Apply a series of commits onto another base commit
+
+#+begin_src sh
+git rebase --onto ${base_commit} ${exclusive_start_commit} ${inclusive_end_commit}
+#+end_src
+
+man:git-rebase

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       0b101b1d-969a-420a-ba65-73cf3cb098ac
+:END:
+#+title: NGINX
+
+* Access NGINX HTTP Headers
+
+Header values can be accessed via =$http_${header_name}=, for example, =$http_origin=.

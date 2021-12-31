@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       60d6e432-74be-49ac-a05f-2cc8150388ca
+:END:
+#+title: curl
+
+* Using curl with Transport Layer Security (TLS)
+
+** How to send a request with specific trusted certificate authorities
+
+Bundle multiple certificates in PEM format using a simple cat operation.
+
+#+BEGIN_SRC sh
+curl --cacert <(cat more-specific-ca.pem more-general-ca.pem) "${url}"
+#+END_SRC
+
+[[man:curl::--cacert]]
+
+** How to send a request without authenticating the server's certificate
+
+#+BEGIN_SRC sh
+curl --insecure "${url}"
+#+END_SRC
+
+[[man:curl::-k, --insecure]]

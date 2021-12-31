@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       4c421fbb-c173-433c-8a9d-99dfd4425f31
+:END:
+#+title: Chron's Disease
+
+* Modern Medicine
+
+** 5-aminosalicyclic-acid
+
+**** balsalazide disodium
+
+**** pentasa (mesalamine)
+
+* Herbal Medicine
+:PROPERTIES:
+:ROAM_REFS: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4367210/
+:END:
+
+** Boswelia Serrata
+
+* Benefits of Time-Restricted Fasting
+:PROPERTIES:
+:ROAM_REFS: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7162980/
+:END:

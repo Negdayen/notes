@@ -4,15 +4,17 @@
 :END:
 #+title: Creating tunnels to private virtual machines on Google Cloud.
 
-[[id:6ed944ee-5232-4efd-8259-8ab437699846][Google Cloud Platform (GCP)]] 
+[[id:6ed944ee-5232-4efd-8259-8ab437699846][Google Cloud Platform (GCP)]]
+
+* Google Cloud Platform project requirements to use IAP tunnels
 
 - Incoming IP addresses will appear on the 35.235.240.0/20 subnet.
 - Firewall rules still apply
 
-* Template
+* Template command-line to establish an IAP tunnel on an arbitrary port
 
-#+BEGIN_SRC sh
+#+begin_src sh
 gcloud compute start-iap-tunnel "${gcp_instance_name}" "${remote_port}" \
-    --local-host-port="localhost:${local_port}" \
-    --zone="${gcp_zone}"
-#+END_SRC
+       --local-host-port="localhost:${local_port}" \
+       --zone="${gcp_zone}"
+#+end_src

@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID: 287c377a-034a-4a7d-9f62-53589813994b
+:ROAM_REFS: https://github.com/kelseyhightower/kubernetes-the-hard-way
+:END:
+#+title: Kubernetes
+
+* Resource Allocation
+
+** Millicores
+
+Kubernetes millicores correspond to Docker's =--cpus= option correspond to Linux's cgroups
+=period= and =quota=.
+
+- https://stackoverflow.com/questions/61851751/multi-threading-with-millicores-in-kubernetes
+- https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt

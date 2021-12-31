@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       1e3220cd-e732-47d4-a3d4-01fc6046c1e0
+:END:
+#+title: Emacs
+
+* Useful Elisp functions
+
+| symbol          | description                 |
+|-----------------+-----------------------------|
+| executable-find | emacs equivalent of =which= |

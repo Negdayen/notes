@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2f3d093f-f977-4fba-a9f4-dfea0266ca35
+:END:
+#+title: Clang Compiler
+
+* Thread Sanitizer (tsan) (-fsanitize=thread)
+
+Automatically detects issues in multithreaded code.
+
+https://github.com/google/sanitizers/wiki/ThreadSanitizerFlags

@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       468757d2-dc6c-4c7c-abaa-d1c2e22882a0
+:END:
+#+title: Git Configuration
+
+* System-wide, Global Git Configuration
+
+#+begin_src sh
+# Disable automatic newline conversions
+git config --global core.autocrlf false
+# Line feed signifies a newline
+git config --global core.eol lf
+# Github/Gitea uses your email address to tie commits to your user profile
+git config --global user.email 'jacob.horrocks@gmail.com'
+git config --global user.name 'Jacob Horrocks'
+#+end_src
+
+If on Windows,
+
+#+begin_src sh
+# Ignore executable bits on Windows.  (This might only be necessary when using Cygwin?)
+git config --global core.filemode false
+# Use Windows's certificate store for TLS (default uses OpenSSL's certificate store)
+git config --global http.sslBackend schannel
+#+end_src
+
+* Local Git Repository Configuration
+
+Disable line break normalization for all files by default by adding the line =* -text= to
+a file called =.gitattributes=.
+
+man:gitattributes

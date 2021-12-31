@@ -1,8 +1,10 @@
 :PROPERTIES:
 :ID:       cb622981-026f-44cb-9161-2fe17f2ea3ca
 :END:
-#+title: Microsoft's Remote Desktop Protocol
+#+title: Microsoft's Remote Desktop Protocol (RDP)
 
 [[id:05e987cb-83bc-4177-b2dc-22d15e89ed84][Microsoft Windows]]
 
-- Port 3389
+* Ports used by Microsoft's Remote Desktop Protocol (RDP)
+
+  - TCP and UDP port 3389

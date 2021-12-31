@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       61693140-0198-4311-b050-37744527894e
+:END:
+#+title: Searching the History of a Git Repository
+
+* Find all commits modifying FILE
+
+#+begin_src sh
+git log --follow -G"${regex}" -- "${file}"
+#+end_src
+
+Possibly useful options: --all, --patch
+
+man:git-log

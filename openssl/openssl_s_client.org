@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       8e131ab4-37e4-411c-af00-2c64d00e4db1
+:ROAM_REFS: man:openssl man:openssl-s_client
+:END:
+#+title: OpenSSL SSL/TLS Command-line Client (openssl s_client)
+
+* Download the certificate chain of a server
+
+#+begin_src sh
+openssl s_client -showcerts -connect "${ip_address_and_port}" < /dev/null |
+    sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > ${local_certificate_name}.crt
+#+end_src
+
+* View the certificate chain of a server
+
+#+begin_src sh
+openssl s_client -showcerts -connect "${ip_address_and_port}"  | less
+#+end_src

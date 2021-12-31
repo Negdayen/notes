@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       ea546d6f-ae2a-41c0-8540-ce81e8dba870
+:ROAM_REFS: https://kubernetes.io/docs/concepts/services-networking/ingress/
+:END:
+#+title: Kubernetes Resource: The Ingress
+
+* Kubernetes Resource: The Ingress
+
+#+caption: simple template
+#+begin_src yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "${name}"
+  namespace: "${namespace}"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "${hostname}"
+      http:
+        paths:
+          - backend:
+              service:
+                name: "${service_resource_name}"
+                port:
+                  name: "${service_port_name}" # mutually exclusive with number: "${service_port_number}"
+            path: /
+            pathType: Prefix
+#+end_src

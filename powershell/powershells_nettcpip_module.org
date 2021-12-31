@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       9b69fd16-dd37-4797-97e3-1ec493662fa0
+:ROAM_REFS: https://docs.microsoft.com/en-us/powershell/module/nettcpip/
+:END:
+#+title: PowerShell's NetTCPIP Module
+
+* View the route that would be used to reach an IP address
+:PROPERTIES:
+:ROAM_REFS: https://docs.microsoft.com/en-us/powershell/module/nettcpip/find-netroute
+:END:
+
+#+begin_src powershell
+Find-NetRoute -RemoteIpAddress "${IP_ADDRESS}"
+#+end_src
+
+* Test network connectivity to specific TCP port
+:PROPERTIES:
+:ROAM_REFS: https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection
+:END:
+
+#+begin_src powershell
+Test-NetConnection -ComputerName ${IP_ADDRESS} -Port ${PORT}
+#+end_src

@@ -1,0 +1,64 @@
+:PROPERTIES:
+:ID:       179d1292-f5d0-4eb8-ab2c-a5f2b29d360b
+:ROAM_REFS: https://helm.sh/docs/chart_template_guide/getting_started/
+:END:
+#+title: Creating a Helm Chart
+
+* Best Practices
+
+#+caption: Initial chart template/skeleton
+#+begin_src sh
+helm create my_chart
+#+end_src
+
+#+caption: Validate that Helm chart is well-formed
+#+begin_src sh
+helm lint ${path_to_helm_chart}
+#+end_src
+
+** Kubernetes =metadata.name=
+
+Kuberentes's =metadata.name= should be unique to a release.  It is limited to 63
+characters because of limitations to the DNS system.  Can use "${chart_name}.name"
+
+* Helm Chart Directory Layout
+
+** my_chart/charts/
+
+#+begin_quote
+The charts/ directory may contain other charts (which we call subcharts).
+#+end_quote
+
+** my_chart/templates/
+
+#+begin_quote
+When Helm evaluates a chart, it will send all of the files in the templates/ directory
+through the template rendering engine. It then collects the results of those templates and
+sends them on to Kubernetes.
+#+end_quote
+
+** my_chart/templates/NOTES.txt
+
+#+begin_quote
+The "help text" for your chart. This will be displayed to your users when they run helm
+install.
+#+end_quote
+
+* Helm Chart Language Reference
+
+** Builtin Objects
+
+| NAME    | DESCRIPTION |
+|---------+-------------|
+| Chart   |             |
+| Release |             |
+| Values  |             |
+
+** Functions
+
+| NAME     | SYNPOSIS                             | DESCRIPTION                                                                    |
+|----------+--------------------------------------+--------------------------------------------------------------------------------|
+| contains | contains SUBSTRING SUPERSTRING       |                                                                                |
+| default  | default DEFAULT_VALUE GIVEN_VALUE    |                                                                                |
+| define   | ={{define "NAME"}} TEMPLATE {{end}}= | Create a template NAME that can be invoked using a template control structure. |
+| template | ={{template "NAME" PIPELINE}}=       | The template NAME is executed with . set to the value of the PIPELINE.         |

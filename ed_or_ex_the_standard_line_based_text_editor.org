@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       edf7f526-0d25-4e12-9907-27d8ad1901d7
+:ROAM_REFS: http://ex-vi.sourceforge.net/ex.html
+:END:
+#+title: ed/ex: The Standard (Line-based) Text Editor
+

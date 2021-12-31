@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       53a969d1-8541-4fc9-b089-7738df55817d
+:END:
+#+title: Bare Git Repositories
+
+* When and why to use a bare git repository
+
+A bare git repository does not have any checked out files; it has no working directory.
+This makes it ideal for remote repositories that are not meant to be used for local use,
+but instead serve as a centralized point multiple people can pull from and push to.
+
+* Convert a normal git repository to a bare git repository
+
+#+begin_src sh
+git config --local --bool core.bare true
+#+end_src
+
+* Convert a bare git repository to a normal git repository
+
+#+begin_src sh
+git config --local --bool core.bare false
+#+end_src
+
+If you are moving a Linux .git repo folder to a Windows machine, execute the following:
+
+#+begin_src sh
+git config --local core.filemode false
+#+end_src

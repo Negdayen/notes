@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       4a0c6100-e736-42e7-af7d-b8d775b8a8d9
+:END:
+#+title: xxd
+
+* Convert an ASCII character to and from hexadecimal representation
+
+#+caption: From ASCII text to hexadecimal text
+#+begin_src sh
+printf '%s' '-' | xxd -p
+#+end_src
+
+#+RESULTS:
+: 2d
+
+#+caption: From hexadecimal text to ASCII text
+#+begin_src sh
+printf '%s' '2d'| xxd -p -r
+#+end_src
+
+#+RESULTS:
+: -
+
+See [[man:ascii][ascii(7)]].

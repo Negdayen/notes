@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       f210656b-09e0-486a-bbc2-86964106a86d
+:ROAM_REFS: https://developer.android.com/docs
+:END:
+
+* Best Practices
+
+- Use the latest NDK version available.
+- Use a platform version <= minSdkVersion.

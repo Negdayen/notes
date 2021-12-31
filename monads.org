@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       36a34661-a573-4300-989e-b19b3c9ab49a
+:ROAM_REFS: https://fsharpforfunandprofit.com/posts/elevated-world/
+:END:
+#+title: Monads

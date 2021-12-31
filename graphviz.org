@@ -1,6 +1,7 @@
-#+TITLE: Graphviz
-#+OPTIONS: ^:nil
-#+OPTIONS: \n:t
+:PROPERTIES:
+:ID:       531e4a23-0d00-4b48-b790-deaee7465e9b
+:END:
+#+title: Graphviz
 
 * References
 

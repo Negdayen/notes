@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       f9b3e199-00d6-4804-b72c-ff09a7327cd1
+:ROAM_REF:  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+:ROAM_REF+: https://exploringjs.com/impatient-js/toc.html
+:END:
+#+title: JavaScript

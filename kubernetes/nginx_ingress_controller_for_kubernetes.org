@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       4e252bf8-2564-491e-bf83-82dbcd2231dc
+:ROAM_REFS: https://github.com/kubernetes/ingress-nginx
+:END:
+#+title: NGINX Ingress Controller for Kubernetes
+
+* Troubleshooting NGINX Ingress Controller for Kubernetes
+:PROPERTIES:
+:ROAM_REFS: https://kubernetes.github.io/ingress-nginx/troubleshooting/
+:END:
+
+Turn on verbose logging by adding =--v=5= to ingress-nginx's command-line.

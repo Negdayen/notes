@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       8184af4e-f788-4a90-ba65-f3be1a4450e4
+:END:
+#+title: Kubernetes Networking
+
+* kube-proxy
+:PROPERTIES:
+:ROAM_REFS:  https://mayankshah.dev/blog/demystifying-kube-proxy/
+:END:

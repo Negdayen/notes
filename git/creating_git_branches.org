@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       7baa77fc-e5b1-4924-8ea8-4ef354b5e657
+:END:
+#+title: Creating a Git Branch
+
+* Create and checkout a new git branch based on the current branch in one command
+
+#+begin_src sh
+git checkout -b "${new_branch_name}" --track remotes/origin/upstream_branch
+#+end_src
+
+man:git-checkout

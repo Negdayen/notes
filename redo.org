@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:         a38cd25d-324a-4271-bd6c-75d6a1f4f405
+:ROAM_REFS:  http://news.dieweltistgarnichtso.net/bin/redo-sh.html
+:ROAM_REFS+: https://github.com/leahneukirchen/redo-c
+:ROAM_REFS+: http://jdebp.info/Softwares/redo/
+:END:
+#+title: Redo Build System

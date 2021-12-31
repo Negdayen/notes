@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:         68b92456-9b7d-40b2-9661-4239b534c7dc
+:ROAM_REFS:  https://www.postgresql.org/docs/14/sql-commands.html
+:ROAM_REFS+: https://sqlite.org/lang.html
+:END:
+#+title: SQL
+
+* SQL Query Order of Execution (Operations)
+:PROPERTIES:
+:ROAM_REFS: https://sqlbolt.com/lesson/select_queries_order_of_execution
+:END:
+
+1. FROM
+2. JOINS
+3. WHERE
+4. GROUP BY
+5. HAVING
+6. SELECT
+7. DISTINCT
+8. ORDER BY
+9. LIMIT / OFFSET

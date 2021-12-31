@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       fb4496ab-abfd-4f9d-b70e-a34a11c1456c
+:ROAM_REFS: man:git-branch
+:END:
+#+title: Change which Commit a Git Branch Points to
+
+* Change which commit a git branch points to
+
+#+begin_src sh
+git branch -f ${branch_name} ${commit}
+#+end_src
+
+[[man:git-branch::-f, --force]]

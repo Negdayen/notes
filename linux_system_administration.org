@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       3dc0fac5-a24e-4a20-b95d-0d7ce8cf60d5
+:END:
+#+title: Linux System Administration
+
+* How to determine how long a Linux process has been running
+
+Example output: =137-05:47:35=
+Reads as: 137 days, 5 hours, 47 minutes, 35 seconds
+
+#+begin_src sh
+ps -p $(pgrep -x ${program_name}) -o etime
+#+end_src

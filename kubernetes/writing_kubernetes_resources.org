@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       217bff0c-176d-4ad1-b22f-928768ab6324
+:END:
+#+title: Writing Kubernetes Resources
+
+* Help and Reference Material for Writing Kubernetes Resources
+
+** kubectl explain
+
+Rather than reading the OpenAPI specification for Kubernetes or [[https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/][the generated HTML docs]],
+you can get help from the command-line using =kubectl explain=.
+
+#+caption: View the schema of the Ingress resource
+#+begin_src sh
+kubectl explain --recursive ingress
+#+end_src
+
+#+caption: List available resources to run 'explain' against
+#+begin_src sh
+kubectl api-resources
+#+end_src
+
+#+caption: View a detailed description of the ingress.spec resource field
+#+begin_src sh
+kubectl explain ingress.spec
+#+end_src
+
+** OpenAPI JSON Specification
+
+Kubernetes's OpenAPI Specification lives at ="${git_repo}/kubernetes/api/openapi-spec/swagger.json"=.

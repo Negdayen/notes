@@ -1,5 +1,4 @@
 :PROPERTIES:
 :ID:       05e987cb-83bc-4177-b2dc-22d15e89ed84
 :END:
-#+title: Microsoft Windows
-
+#+title: Microsoft Windows Operating System (OS)

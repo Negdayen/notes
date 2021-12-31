@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       98429c97-15fd-461c-a903-e1174e70fe3c
+:END:
+#+title: Secure Shell (SSH) Local Port Forward Tunnel
+
+* Secure Shell (SSH) Local Port Forward Tunnel
+
+With [[id:8bdf16c9-0639-4f7e-8872-d05df060a087][SSH]], you can allocate a port locally that proxies traffic through a secure shell
+connection to another destination from that remote host.
+
+I.E. If you have a =node-b= that can be accessed from =node-a=, you can access =node-b=
+locally through =node-a=, assuming you have SSH access to =node-a=.
+
+#+begin_src sh
+ssh -L "${local_port}:${node_b_address}:${node_b_port}" "${ssh_user}@${node_a_address}"
+#+end_src

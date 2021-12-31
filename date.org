@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       37d9d29d-5abe-4aab-9da0-baf8e6e6eb6b
+:ROAM_REFS: man:date
+:END:
+#+title: date
+
+* Convert time format from unix epoch to timestamp
+
+#+begin_src sh
+date --date="@${seconds_since_epoch}"
+#+end_src
+
+#+RESULTS:
+
+* Get time offset of timezone from GMT
+
+#+begin_src sh
+TZ=America/Los_Angeles date '+%::z (%Z)'
+#+end_src
+
+#+results:
+: -08:00:00 (PST)

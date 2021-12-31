@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       2ab9fd07-dfab-4bbc-866c-7b63971060b1
+:END:
+#+title: Helm Command-line Reference
+
+* Expanded/Rendered Kubernetes resources
+
+** Render the resources without sending to Kubernetes
+
+#+begin_src sh
+helm --debug -n "${namespace}" template "${your_release_name}" "${chart}" -f "${lower_priority_values_file}" -f "${higher_priority_values_file}"
+#+end_src
+
+** View the rendered resources Helm sent to Kubernetes
+
+#+begin_src sh
+helm -n "${namespace}" get manifest "${release_name}"
+#+end_src

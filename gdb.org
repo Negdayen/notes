@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       d5365ab2-09b1-4001-baab-6205d0e5e440
+:END:
+#+title: GNU Debugger (GDB)
+
+* Record and Replay
+
+GDB has support for reverse debugging, but in practice recording seems to take a very long
+time.  Gambit has been recording for over 24 hours and I don't know if it's making any
+progress.
+
+https://www.sourceware.org/gdb/wiki/ProcessRecord/Tutorial
+https://sourceware.org/gdb/onlinedocs/gdb/Process-Record-and-Replay.html
+
+* Example calling malloc from GDB
+
+#+begin_example
+(gdb) set $x = malloc(sizeof(___S16))
+(gdb) call ___SCMOBJ_to_S16(___GET_PSTATE(),___FIX(10L),$x,1)
+(gdb) print * (___S16 *) $x
+$18 = 10
+#+end_example
